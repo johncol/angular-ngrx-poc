@@ -1,0 +1,10 @@
+.musical-intrument-display {
+  margin: 20px 30px;
+  padding: 30px;
+  border-radius: 5px;
+  border: 1px solid #666;
+}
+
+.musical-intrument-display button {
+  float: right;
+}

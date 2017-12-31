@@ -1,0 +1,8 @@
+<h1>{{instrument.name.toUpperCase()}} musical instrument</h1>
+
+<img [src]="instrument.imageUrl" [alt]="instrument.name + ' image'" height="300" />
+<p>Image URL: <a target="_blank" [href]="instrument.imageUrl">{{instrument.imageUrl}}</a></p>
+<div class="actions">
+  <button type="button" routerLink="/list">Go to list</button>
+  <button type="button" (click)="removeInstrument()">Remove</button>
+</div>

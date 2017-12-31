@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 
 import { environment } from '../environments/environment';
@@ -13,15 +14,18 @@ import { MusicalInstrumentsListComponent } from './musical-instruments-list/musi
 import { AddMusicalInstrumentComponent } from './add-musical-instrument/add-musical-instrument.component';
 
 import { appReducers } from './store/app-state';
+import { MusicalInstrumentDetailComponent } from './musical-instrument-detail/musical-instrument-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MusicalInstrumentsListComponent,
-    AddMusicalInstrumentComponent
+    AddMusicalInstrumentComponent,
+    MusicalInstrumentDetailComponent
   ],
   imports: [
     BrowserModule,
+    RouterModule,
     ReactiveFormsModule,
     AppRoutingModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),

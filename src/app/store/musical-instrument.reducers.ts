@@ -5,9 +5,9 @@ import { MusicalInstrumentAction, InstrumentActionType } from "./musical-instrum
 
 const initialState: MusicalInstrumentState = {
   instruments: [
-    new MusicalInstrument('Guitar', 'https://megamusic.blob.core.windows.net/images/0000250_ibanez-rg370ahmz-bmt-electric-guitar.jpg'),
-    new MusicalInstrument('Drum', 'https://media.sweetwater.com/api/i/q-82__ha-07f24c8e348a9ae2__hmac-28611a04854a825d0aa6629a91c079148612ba88/images/items/750/Peacemaker-large.jpg'),
-    new MusicalInstrument('Violin', 'http://www.tiendadelmusico.com/5087-large_default/greko-mv1410af-violin-en-acabado-antique-mate-con-estuche-arco-y-colofonia.jpg')
+    MusicalInstrument.new('Guitar', 'https://megamusic.blob.core.windows.net/images/0000250_ibanez-rg370ahmz-bmt-electric-guitar.jpg'),
+    MusicalInstrument.new('Drum', 'https://media.sweetwater.com/api/i/q-82__ha-07f24c8e348a9ae2__hmac-28611a04854a825d0aa6629a91c079148612ba88/images/items/750/Peacemaker-large.jpg'),
+    MusicalInstrument.new('Violin', 'http://www.tiendadelmusico.com/5087-large_default/greko-mv1410af-violin-en-acabado-antique-mate-con-estuche-arco-y-colofonia.jpg')
   ]
 };
 

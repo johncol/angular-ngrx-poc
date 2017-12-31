@@ -29,7 +29,8 @@ export class AddMusicalInstrumentComponent implements OnInit {
 
   add(): void {
     if (this.form.valid) {
-      this.store.dispatch(new AddInstrumentAction({...this.form.value}))
+      const newInstrument: MusicalInstrument = MusicalInstrument.new(this.form.value.name, this.form.value.imageUrl);
+      this.store.dispatch(new AddInstrumentAction(newInstrument));
       this.form.reset();
       this.formState.displayErrors = false;
       this.formState.displaySuccess = true;
