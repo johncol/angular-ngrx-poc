@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 
 import { environment } from '../environments/environment';
@@ -25,7 +24,6 @@ import { MusicalInstrumentDetailComponent } from './musical-instrument-detail/mu
   ],
   imports: [
     BrowserModule,
-    RouterModule,
     ReactiveFormsModule,
     AppRoutingModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
