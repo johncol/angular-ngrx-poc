@@ -1,0 +1,37 @@
+<h1>Add a new musical instrument</h1>
+
+<form [formGroup]="form" (ngSubmit)="add()">
+
+  <div class="success-message" *ngIf="formState.displaySuccess && !formState.displayErrors">
+    Instrument added!
+  </div>
+
+  <div>
+    <label for="name">Name:</label>
+    <br>
+    <input
+      type="text"
+      name="name"
+      formControlName="name"
+    />
+    <br>
+    <span class="error-message" *ngIf="formState.displayErrors && form.controls['name'].hasError('required')">Name field is required</span>
+  </div>
+  
+  <div>
+    <label for="imageUrl">Image URL:</label>
+    <br>
+    <input
+      type="url"
+      name="imageUrl"
+      formControlName="imageUrl"
+    />
+    <br>
+    <span class="error-message" *ngIf="formState.displayErrors && form.controls['imageUrl'].hasError('required')">Image URL field is required</span>
+  </div>
+
+  <div>
+    <button type="submit">Add</button>
+  </div>
+
+</form>

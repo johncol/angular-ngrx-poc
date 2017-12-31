@@ -1,0 +1,8 @@
+<h1>
+  Musical Instruments List
+</h1>
+
+<section class="musical-intrument-display" *ngFor="let instrument of (state | async).instruments">
+  <h2>{{instrument.name}}</h2>
+  <img [src]="instrument.imageUrl" alt="{{instrument.name}} image" height=100 />
+</section>
