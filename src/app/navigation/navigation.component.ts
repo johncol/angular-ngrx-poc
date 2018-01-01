@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../services/authentication.service';
 import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 import { Subscription } from 'rxjs/Subscription';
+import { AuthState } from '../store/app-state';
 
 @Component({
   selector: 'app-navigation',
@@ -9,7 +10,7 @@ import { Subscription } from 'rxjs/Subscription';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit, OnDestroy {
-  authenticated: boolean;
+  authState: AuthState;
   authenticatedSubscription: Subscription;
 
   constructor(
@@ -18,7 +19,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.authenticatedSubscription = this.authenticationService.authenticated
-      .subscribe(authenticated => this.authenticated = authenticated);
+      .subscribe(authState => this.authState = authState);
   }
 
   ngOnDestroy(): void {

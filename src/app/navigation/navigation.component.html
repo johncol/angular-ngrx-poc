@@ -1,5 +1,8 @@
-<section *ngIf="authenticated">
-  <a routerLink="/musical-instruments/list">List</a> |
-  <a routerLink="/musical-instruments/new">Add</a> |
-  <a routerLink="/logout">Logout</a>
+<section *ngIf="authState && authState.authenticated">
+  <div>Hello {{authState.user}}</div>
+  <div>
+    <a routerLink="/musical-instruments/list">List</a> |
+    <a routerLink="/musical-instruments/new">Add</a> |
+    <a routerLink="/logout">Logout</a>
+  </div>
 </section>
