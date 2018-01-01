@@ -32,7 +32,7 @@ export class MusicalInstrumentDetailComponent implements OnInit {
 
   removeInstrument(): void {
     this.store.dispatch(new DeleteInstrumentAction(this.instrument));
-    this.router.navigate(['/list']);
+    this.router.navigate(['musical-instruments', 'list']);
   }
 
 }

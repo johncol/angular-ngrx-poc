@@ -1,0 +1,31 @@
+<h1>Login</h1>
+
+<form [formGroup]="form" (ngSubmit)="login()">
+  <p class="warn-message" *ngIf="formState.invalidCredentials">
+    Invalid credentials
+  </p>
+  <p class="error-message" *ngIf="formState.errorsInForm">
+    All fields are required
+  </p>
+  <div>
+    <label for="username">Username</label>
+    <br>
+    <input
+      type="text"
+      name="username"
+      formControlName="username"
+    />
+  </div>
+  <div>
+    <label for="password">Password</label>
+    <br>
+    <input
+      type="password"
+      name="password"
+      formControlName="password"
+    />
+  </div>
+  <div>
+    <button type="submit">Login</button>
+  </div>
+</form>

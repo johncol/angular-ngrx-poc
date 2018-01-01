@@ -14,13 +14,21 @@ import { AddMusicalInstrumentComponent } from './add-musical-instrument/add-musi
 
 import { appReducers } from './store/app-state';
 import { MusicalInstrumentDetailComponent } from './musical-instrument-detail/musical-instrument-detail.component';
+import { LoginComponent } from './login/login.component';
+import { AuthenticationService } from './services/authentication.service';
+import { NavigationComponent } from './navigation/navigation.component';
+import { LogoutComponent } from './logout/logout.component';
+import { AuthenticationGuard } from './guards/authentication.guard';
 
 @NgModule({
   declarations: [
     AppComponent,
     MusicalInstrumentsListComponent,
     AddMusicalInstrumentComponent,
-    MusicalInstrumentDetailComponent
+    MusicalInstrumentDetailComponent,
+    LoginComponent,
+    NavigationComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +37,10 @@ import { MusicalInstrumentDetailComponent } from './musical-instrument-detail/mu
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     StoreModule.forRoot(appReducers)
   ],
-  providers: [],
+  providers: [
+    AuthenticationService,
+    AuthenticationGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
