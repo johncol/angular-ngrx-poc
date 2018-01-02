@@ -23,8 +23,8 @@ export function musicalInstrumentReducer(state: MusicalInstrumentState = initial
       const index: number = state.instruments.indexOf(action.payload);
       let instruments: MusicalInstrument[];
       if (index !== -1) {
-        state.instruments.splice(index, 1);
-        instruments = state.instruments;
+        instruments = [...state.instruments];
+        instruments.splice(index, 1);
       } else {
         console.error('Cannot find instrument to delete:', action.payload);
         instruments = state.instruments;
