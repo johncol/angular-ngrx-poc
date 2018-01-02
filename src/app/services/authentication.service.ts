@@ -17,9 +17,7 @@ export class AuthenticationService {
   ];
   authenticated: Store<AuthState>;
 
-  constructor(
-    private store: Store<AppState>
-  ) {
+  constructor(private store: Store<AppState>) {
     this.authenticated = this.store.select('auth');
   }
 

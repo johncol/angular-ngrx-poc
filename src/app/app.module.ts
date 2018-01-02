@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 import { environment } from '../environments/environment';
 
@@ -19,6 +20,7 @@ import { AuthenticationService } from './services/authentication.service';
 import { NavigationComponent } from './navigation/navigation.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AuthenticationGuard } from './guards/authentication.guard';
+import { AuthEffects } from './store/auth.effects';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { AuthenticationGuard } from './guards/authentication.guard';
     ReactiveFormsModule,
     AppRoutingModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
-    StoreModule.forRoot(appReducers)
+    StoreModule.forRoot(appReducers),
+    EffectsModule.forRoot([AuthEffects])
   ],
   providers: [
     AuthenticationService,

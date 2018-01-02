@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { AuthenticationService } from '../services/authentication.service';
 
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/take';
 
 @Injectable()
 export class AuthenticationGuard implements CanActivate {
@@ -15,6 +16,7 @@ export class AuthenticationGuard implements CanActivate {
   
   canActivate(): Observable<boolean> {
     return this.authenticationService.authenticated
+      .take(1)
       .map(authState => {
         if (!authState.authenticated) {
           this.router.navigate(['/']);
